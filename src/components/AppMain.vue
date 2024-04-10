@@ -183,7 +183,7 @@
     }
 
     .description{
-        font-size: 14px;
+        font-size: $font-size;
         line-height: 12px;
     }
     .price, .first-price{
@@ -200,7 +200,7 @@
     }
     .badge{
         font-weight: 700;
-        font-size:14px ;
+        font-size: $font-size;
         position: absolute;
         color: white;
         bottom: 30px; 

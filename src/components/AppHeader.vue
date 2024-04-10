@@ -48,10 +48,11 @@
 </template>
 
 <style lang="scss" scoped>
+    @use '../style/partials/variables' as *;
     .page-header{
         background-color:#FF6900;
         font-weight: 600;
-        font-size: 14px;
+        font-size: $font-size;
         color:white;
         width: 100%;
         position: fixed;

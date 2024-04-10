@@ -1,6 +1,12 @@
 <script>
     export default {
-
+        data(){
+            return{
+                categories:['Donna', 'Uomo', 'Bambino'],
+                icons: ['user-icon.png', 'love-icon.png', 'bag-icon.png']
+                
+            }
+        }
     }
 </script>
 
@@ -10,14 +16,10 @@
             <div class="flex">
                 <!-- menù -->
                 <ul class="flex">                    
-                    <li>
-                        <a href="#">Donna</a>
-                    </li>
-                    <li>
-                        <a href="#">Uomo</a>
-                    </li>
-                    <li>
-                        <a href="#">Bambino</a>
+                    <li v-for="category in categories">
+                        <a href="#">
+                            {{category}}
+                        </a>
                     </li>
                 </ul>                 
                 <div class="logo">
@@ -26,21 +28,11 @@
                 </div>
                 <ul class="action flex">
                     <!-- icone link -->
-                    <li>
+                    <li v-for="icon in icons">
                         <a href="">
-                            <img src="../assets/img/user-icon.png" alt="">
+                            <img :src="'../assets/img/'+ icon" alt="">
                         </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="../assets/img/love-icon.png" alt="">
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="">
-                            <img src="../assets/img/bag-icon.png" alt="">
-                        </a>
-                    </li>                   
+                    </li>                 
                 </ul>
             </div>
         </nav>

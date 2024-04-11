@@ -1,6 +1,18 @@
 <script>
     export default {
-        props: ['card','badges'],
+        props: ['card','badges','reMapCard'],
+        
+        data(){
+            return{
+
+            }
+        },
+        methods:{            
+            calcPrice(item) {
+                const newPrice = item.price -(item.price*item.discount/100);
+                return newPrice.toFixed(2)               
+            }
+        }
     }
 </script>
 
@@ -9,7 +21,12 @@
         <div class="card-head">
             <!-- cuoricino preferiti -->
             <div class="heart">
-                <a href="">&hearts;</a>
+                <a v-if="card.isInFavorites" href="">
+                    <i class="fa-solid fa-heart"></i>                    
+                </a>
+                <a v-else>
+                    <i class="fa-regular fa-heart"></i>
+                </a>
             </div>
             <!-- immagine -->
             <img :src="'/img/'+card.frontImage" alt="">
@@ -32,11 +49,20 @@
             </h5>
             <h3 class="description">
                 {{ card.name.toUpperCase() }}
-            </h3>                         
-            <span class="price">14,99€</span>
-            <span class="first-price">
-                {{ card.price }}
-            </span>                        
+            </h3>
+            <div v-if="reMapCard.isDiscounted">
+                <span class="price">
+                    {{ calcPrice(reMapCard) }}
+                </span>                     
+                <span class="first-price">
+                    {{ card.price }}
+                </span>
+            </div>
+            <div v-else>
+                <span class="price">
+                    {{ card.price }}
+                </span>
+            </div>                           
         </div>
     </div>
 </template>
@@ -89,12 +115,13 @@
         position: absolute;
         background-color: white;
         text-align: center;
-        font-size: 22px;
+        font-size: 18px;
+        line-height: 36px;;
         width: 36px;
-        height: 36px;
+        aspect-ratio: 1;
         top: 4px;
-        right: 0;
-        z-index:10;
+        right: 4px;
+        z-index:2;
 
         &:hover{
         color: red;
@@ -112,6 +139,9 @@
     }
     .price, .first-price{
         font-size: $font_size;
+        &::after{
+            content: '€';
+        }
     }
 
     .price{

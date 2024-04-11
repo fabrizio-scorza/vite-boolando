@@ -27,27 +27,27 @@
                     <ul>
                         <li>
                             <a href="#">
-                                <img src="../assets/img/twitter_alt.svg" alt="">
+                                <img src="/img/twitter_alt.svg" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="../assets/img/facebook_alt.svg" alt="">
+                                <img src="/img/facebook_alt.svg" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="../assets/img/instagram-alt.svg" alt="">
+                                <img src="/img/instagram-alt.svg" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="../assets/img/pinterest.svg" alt="">
+                                <img src="/img/pinterest.svg" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="../assets/img/youtube_alt.svg" alt="">
+                                <img src="/img/youtube_alt.svg" alt="">
                             </a>
                         </li>
                     </ul>

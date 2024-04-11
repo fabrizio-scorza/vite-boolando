@@ -25,12 +25,12 @@
                 <div class="logo">
                     <!-- logo -->
                     <img src="../assets/img/boolean-logo.png" alt="">
-                </div>
+                </div>..
                 <ul class="action flex">
                     <!-- icone link -->
                     <li v-for="icon in icons">
                         <a href="">
-                            <img :src="'../assets/img/'+ icon" alt="">
+                            <img :src="'public/'+ icon" alt="">
                         </a>
                     </li>                 
                 </ul>

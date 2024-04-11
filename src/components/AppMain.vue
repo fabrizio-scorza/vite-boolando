@@ -20,7 +20,7 @@
         <section class="container">
             <div class="row">
                 <div v-for="product in items" class="col-4">
-                    <AppCard :card="product" :key="product.id"/>                    
+                    <AppCard :card="product" :badges="product.badges" :key="product.id"/>                    
                 </div>               
             </div>
         </section>

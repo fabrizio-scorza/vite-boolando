@@ -1,6 +1,6 @@
 <script>
     export default {
-        props: ['card'],
+        props: ['card','badges'],
     }
 </script>
 
@@ -14,9 +14,11 @@
             <!-- immagine -->
             <img :src="'/img/'+card.frontImage" alt="">
             <div>
-                <!-- badge -->
-                <div class="badge discount"> 50% </div>
-                <div class="badge sostenibility">Sostenibilità</div>
+                <div v-for="badge in badges" class="badge" :class="badge.type">
+                    <!-- badge -->
+                        {{ badge.value }}
+                    <!-- <div class="badge sostenibility">Sostenibilità</div> -->
+                </div>
             </div>
             <div class="overlay">
                 <!-- immagine overlay -->
@@ -41,14 +43,63 @@
 
 <style lang="scss" scoped>
     @use '../style/partials/variables' as *;
-    .card-head{
-        position: relative;
+    
+    .card{
+        cursor: pointer;
         
         &:hover .overlay{
         opacity: 1;
         transition: opacity 400ms ease-in-out;
         }
     }
+
+    .overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    
+    .card-head{
+        position: relative;
+    }
+
+    .badge{
+        font-weight: 700;
+        font-size: $font-size;        
+        color: white;
+        position :absolute;
+        bottom: 30px;
+        z-index: 2;
+
+        &:first-child:not(:only-child){
+            left:38px;
+        }
+    }
+    .discount{
+        background-color: red;
+    }
+    .tag{
+        background-color: green;
+    }
+  
+    .heart{  
+        position: absolute;
+        background-color: white;
+        text-align: center;
+        font-size: 22px;
+        width: 36px;
+        height: 36px;
+        top: 4px;
+        right: 0;
+        z-index:10;
+
+        &:hover{
+        color: red;
+        }
+    } 
 
     .brand{
         font-weight: 400;
@@ -71,46 +122,5 @@
         text-decoration: line-through;
         padding-left: 10px;
     }
-    .badge{
-        font-weight: 700;
-        font-size: $font-size;
-        position: absolute;
-        color: white;
-        bottom: 30px; 
-        z-index: 10;
-        
-        &:nth-child(2){
-            left:38px;
-        }
-    }
-    .discount{
-        background-color: red;
-    }
-    .sostenibility{
-        background-color: green;
-    }
-  
-    .heart{  
-        position: absolute;
-        background-color: white;
-        text-align: center;
-        font-size: 22px;
-        width: 36px;
-        height: 36px;
-        top: 4px;
-        right: 0;
-        z-index:10;
-
-        &:hover{
-        color: red;
-        }
-    }
-    .overlay{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        opacity: 0;
-    }
+    
 </style>SS

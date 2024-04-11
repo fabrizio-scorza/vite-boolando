@@ -1,6 +1,6 @@
 <script>
     export default {
-        
+        props: ['card'],
     }
 </script>
 
@@ -12,23 +12,29 @@
                 <a href="">&hearts;</a>
             </div>
             <!-- immagine -->
-            <img src="../assets/img/1.webp" alt="">
+            <img :src="'/img/'+card.frontImage" alt="">
             <div>
                 <!-- badge -->
-                <div class="badge discount">-50%</div>
+                <div class="badge discount"> 50% </div>
                 <div class="badge sostenibility">Sostenibilità</div>
             </div>
             <div class="overlay">
                 <!-- immagine overlay -->
-                <img src="../assets/img/1b.webp" alt="">
+                <img :src="'/img/'+card.backImage" alt="">
             </div>                        
         </div>
         <div class="card-foot">
             <!-- testo con descrizione e prezzo -->
-            <h5 class="brand">Levi's</h5>
-            <h3 class="description">RELAXED FIT TEE UNISEX</h3>                         
+            <h5 class="brand">
+                {{ card.brand }}
+            </h5>
+            <h3 class="description">
+                {{ card.name.toUpperCase() }}
+            </h3>                         
             <span class="price">14,99€</span>
-            <span class="first-price">29,99€</span>                        
+            <span class="first-price">
+                {{ card.price }}
+            </span>                        
         </div>
     </div>
 </template>

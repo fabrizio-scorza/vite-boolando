@@ -24,13 +24,13 @@
                 </ul>                 
                 <div class="logo">
                     <!-- logo -->
-                    <img src="../assets/img/boolean-logo.png" alt="">
+                    <img src="/img/boolean-logo.png" alt="">
                 </div>
                 <ul class="action flex">
                     <!-- icone link -->
                     <li v-for="icon in icons">
                         <a href="">
-                            <img :src="'public/'+ icon" alt="">
+                            <img :src="'img/'+ icon" alt="">
                         </a>
                     </li>                 
                 </ul>

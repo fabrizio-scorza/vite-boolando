@@ -25,7 +25,7 @@
                 <div class="logo">
                     <!-- logo -->
                     <img src="../assets/img/boolean-logo.png" alt="">
-                </div>..
+                </div>
                 <ul class="action flex">
                     <!-- icone link -->
                     <li v-for="icon in icons">

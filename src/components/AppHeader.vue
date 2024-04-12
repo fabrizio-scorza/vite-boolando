@@ -1,13 +1,13 @@
 <script>
-    export default {
-        data(){
-            return{
-                categories:['Donna', 'Uomo', 'Bambino'],
-                icons: ['user-icon.png', 'love-icon.png', 'bag-icon.png']
-                
-            }
+export default {
+    data() {
+        return {
+            categories: ['Donna', 'Uomo', 'Bambino'],
+            icons: ['user-icon.png', 'love-icon.png', 'bag-icon.png']
+
         }
     }
+}
 </script>
 
 <template>
@@ -15,13 +15,13 @@
         <nav class="container">
             <div class="flex">
                 <!-- menù -->
-                <ul class="flex">                    
+                <ul class="flex">
                     <li v-for="category in categories">
                         <a href="#">
-                            {{category}}
+                            {{ category }}
                         </a>
                     </li>
-                </ul>                 
+                </ul>
                 <div class="logo">
                     <!-- logo -->
                     <img src="/img/boolean-logo.png" alt="">
@@ -30,9 +30,9 @@
                     <!-- icone link -->
                     <li v-for="icon in icons">
                         <a href="">
-                            <img :src="'img/'+ icon" alt="">
+                            <img :src="'img/' + icon" alt="">
                         </a>
-                    </li>                 
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -40,30 +40,31 @@
 </template>
 
 <style lang="scss" scoped>
-    @use '../style/partials/variables' as *;
-    .page-header{
-        background-color:#FF6900;
-        font-weight: 600;
-        font-size: $font-size;
-        color:white;
-        width: 100%;
-        position: fixed;
-        z-index: 100;
-        padding: 12px 0;
+@use '../style/partials/variables' as *;
 
-        .flex{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-        }
-    }
+.page-header {
+    background-color: #FF6900;
+    font-weight: 600;
+    font-size: $font-size;
+    color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    padding: 12px 0;
 
-    .logo img{
-        height: 28px;
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
     }
+}
 
-    .action img{
-        width: 20px;
-    }
+.logo img {
+    height: 28px;
+}
+
+.action img {
+    width: 20px;
+}
 </style>

@@ -51,10 +51,9 @@ export default {
             <h5 class="brand">
                 {{ card.brand }}
             </h5>
-            <h3 class="description">
+            <h3 class="description" @click="$emit('showProduct')">
                 {{ card.name.toUpperCase() }}
             </h3>
-            
             <div v-if="reMapCard.isDiscounted">
                 <span class="price">
                     {{ calcPrice(reMapCard) }}
